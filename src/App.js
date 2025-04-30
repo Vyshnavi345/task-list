@@ -16,10 +16,13 @@ function App() {
 
   // Function to handle submitting the tasks and clearing the task list
   const submitTasks = () => {
+    if (tasks.length === 0) {
+      alert('Please enter a task before submitting.');
+      return;
+    }
     alert('Tasks Submitted!');
     setTasks([]);  // Clear the tasks after submission
   };
-
   return (
     <div className="container">
       <h1 className="header">Task List App</h1>
